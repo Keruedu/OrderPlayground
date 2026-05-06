@@ -1,0 +1,11 @@
+flowchart TD
+    User[User / Postman] --> Keycloak[Keycloak: Login + Token]
+    Keycloak --> User
+    User --> Gateway[Go Gin Gateway API]
+    Gateway --> MySQL[(MySQL: orders, items, workflow_runs)]
+    Gateway --> Mongo[(MongoDB: audit_events, request_logs)]
+    Gateway --> Temporal[Temporal: CreateOrderWorkflow]
+    Temporal --> Inventory[Inventory Service: gRPC]
+    Temporal --> Notifier[Notifier Service: gRPC]
+    Temporal --> MySQL
+    Temporal --> Mongo

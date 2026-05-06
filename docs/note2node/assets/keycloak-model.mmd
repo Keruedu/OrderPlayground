@@ -1,0 +1,10 @@
+flowchart LR
+    Master[master realm<br/>quản trị Keycloak]
+    Internal[order-playground-realm<br/>internal admin client]
+    AppRealm[order-playground realm<br/>realm của app]
+    Gateway[gateway-api<br/>business client]
+    Users[user1/admin1]
+    Master --> Internal
+    Master --> AppRealm
+    AppRealm --> Gateway
+    AppRealm --> Users

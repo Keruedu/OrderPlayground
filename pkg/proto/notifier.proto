@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package notifier.v1;
+
+option go_package = "order-playground/pkg/transport/notifierpb";
+
+message SendOrderNotificationRequest {
+  string order_id = 1;
+  string event_type = 2;
+  string recipient = 3;
+}
+
+message SendOrderNotificationResponse {
+  bool success = 1;
+  string message_id = 2;
+}
+
+service NotifierService {
+  rpc SendOrderNotification(SendOrderNotificationRequest) returns (SendOrderNotificationResponse);
+}
+

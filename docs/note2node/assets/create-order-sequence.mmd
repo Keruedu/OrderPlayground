@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant U as User
+    participant K as Keycloak
+    participant G as Gateway API
+    participant M as MySQL
+    participant D as MongoDB
+    participant T as Temporal
+    participant I as Inventory gRPC
+    participant N as Notifier gRPC
+    U->>K: Login lấy access token
+    K-->>U: Access token
+    U->>G: POST /api/orders + Bearer token
+    G->>G: Verify JWT và role
+    G->>M: Insert order PENDING
+    G->>D: Insert ORDER_CREATED
+    G->>T: Start CreateOrderWorkflow
+    T->>I: Reserve inventory
+    T->>N: Send notification
+    T->>M: Update order COMPLETED / FAILED
+    T->>D: Insert final audit event

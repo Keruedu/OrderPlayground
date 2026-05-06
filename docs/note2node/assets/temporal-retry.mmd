@@ -1,0 +1,9 @@
+flowchart TD
+    A[CreateOrderWorkflow] --> B[ValidateOrderActivity]
+    B --> C[ReserveInventoryActivity]
+    C -->|success| D[ApprovePaymentActivity]
+    C -->|failure after retry| F[MarkOrderFailedActivity]
+    D --> E[SendNotificationActivity]
+    E --> G[MarkOrderCompletedActivity]
+    F --> H[ORDER_FAILED audit]
+    G --> I[ORDER_COMPLETED audit]

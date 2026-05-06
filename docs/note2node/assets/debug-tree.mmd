@@ -1,0 +1,10 @@
+flowchart TD
+    A[Có lỗi khi demo?]
+    A --> B[401/403: mở Keycloak]
+    A --> C[Order chưa xong: mở Temporal UI]
+    A --> D[Data sai: mở MySQL/MongoDB]
+    A --> E[App không lên: mở Docker logs]
+    B --> F[Check realm, client, token, role]
+    C --> G[Check workflow history, activity retry]
+    D --> H[Check orders, workflow_runs, audit_events]
+    E --> I[Check port conflict, healthcheck, startup retry]

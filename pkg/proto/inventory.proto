@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+option go_package = "order-playground/pkg/transport/inventorypb";
+
+message InventoryItem {
+  string sku = 1;
+  int32 quantity = 2;
+}
+
+message ReserveInventoryRequest {
+  string order_id = 1;
+  repeated InventoryItem items = 2;
+}
+
+message ReserveInventoryResponse {
+  bool success = 1;
+  string reservation_id = 2;
+  string message = 3;
+}
+
+service InventoryService {
+  rpc ReserveInventory(ReserveInventoryRequest) returns (ReserveInventoryResponse);
+}
+

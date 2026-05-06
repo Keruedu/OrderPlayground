@@ -1,0 +1,170 @@
+﻿{
+    "happy_create":  {
+                         "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                         "status":  "PENDING",
+                         "workflow_id":  "order-976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                         "created_by":  "user1",
+                         "created_at":  "2026-05-05T09:37:12.7398242Z"
+                     },
+    "happy_order":  {
+                        "id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                        "customer_name":  "Nguyen Trung",
+                        "currency":  "USD",
+                        "status":  "COMPLETED",
+                        "created_by":  "user1",
+                        "created_at":  "2026-05-05T09:37:13Z",
+                        "updated_at":  "2026-05-05T09:37:14Z",
+                        "items":  [
+                                      {
+                                          "id":  8,
+                                          "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                          "sku":  "BOOK-001",
+                                          "quantity":  1,
+                                          "price":  15.5
+                                      },
+                                      {
+                                          "id":  9,
+                                          "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                          "sku":  "PEN-002",
+                                          "quantity":  2,
+                                          "price":  4.25
+                                      }
+                                  ],
+                        "workflow":  {
+                                         "id":  6,
+                                         "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                         "workflow_id":  "order-976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                         "run_id":  "019df77f-ac72-77ec-a03f-572374383303",
+                                         "status":  "COMPLETED",
+                                         "started_at":  "2026-05-05T09:37:13Z",
+                                         "updated_at":  "2026-05-05T09:37:14Z"
+                                     },
+                        "audit_summary":  {
+                                              "count":  5,
+                                              "last_type":  "ORDER_COMPLETED",
+                                              "last_at":  "2026-05-05T09:37:13.642Z",
+                                              "last_source":  "temporal"
+                                          }
+                    },
+    "happy_events":  {
+                         "events":  [
+                                        {
+                                            "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                            "type":  "ORDER_CREATED",
+                                            "message":  "Order accepted by gateway",
+                                            "actor":  "user1",
+                                            "source":  "gateway-api",
+                                            "created_at":  "2026-05-05T09:37:12.739Z"
+                                        },
+                                        {
+                                            "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                            "type":  "ORDER_VALIDATED",
+                                            "message":  "Order payload validated",
+                                            "actor":  "user1",
+                                            "source":  "temporal",
+                                            "created_at":  "2026-05-05T09:37:12.962Z",
+                                            "metadata":  {
+                                                             "currency":  "USD"
+                                                         }
+                                        },
+                                        {
+                                            "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                            "type":  "INVENTORY_RESERVED",
+                                            "message":  "Inventory reserved successfully",
+                                            "actor":  "user1",
+                                            "source":  "inventory-service",
+                                            "created_at":  "2026-05-05T09:37:13.252Z"
+                                        },
+                                        {
+                                            "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                            "type":  "PAYMENT_APPROVED",
+                                            "message":  "Payment approved by mock activity",
+                                            "actor":  "user1",
+                                            "source":  "temporal",
+                                            "created_at":  "2026-05-05T09:37:13.353Z"
+                                        },
+                                        {
+                                            "order_id":  "976aa4eb-f3dd-40dd-a4a0-8626f01b9b93",
+                                            "type":  "ORDER_COMPLETED",
+                                            "message":  "Order workflow completed",
+                                            "actor":  "user1",
+                                            "source":  "temporal",
+                                            "created_at":  "2026-05-05T09:37:13.642Z"
+                                        }
+                                    ]
+                     },
+    "failure_create":  {
+                           "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                           "status":  "PENDING",
+                           "workflow_id":  "order-e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                           "created_by":  "user1",
+                           "created_at":  "2026-05-05T09:37:12.863404715Z"
+                       },
+    "failure_order":  {
+                          "id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                          "customer_name":  "Debug Failure",
+                          "currency":  "USD",
+                          "status":  "FAILED",
+                          "created_by":  "user1",
+                          "created_at":  "2026-05-05T09:37:13Z",
+                          "updated_at":  "2026-05-05T09:37:16Z",
+                          "items":  [
+                                        {
+                                            "id":  10,
+                                            "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                            "sku":  "BULK-999",
+                                            "quantity":  9,
+                                            "price":  99
+                                        }
+                                    ],
+                          "workflow":  {
+                                           "id":  7,
+                                           "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                           "workflow_id":  "order-e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                           "run_id":  "019df77f-acaf-7359-af26-703811afd114",
+                                           "status":  "FAILED",
+                                           "started_at":  "2026-05-05T09:37:13Z",
+                                           "updated_at":  "2026-05-05T09:37:16Z"
+                                       },
+                          "audit_summary":  {
+                                                "count":  3,
+                                                "last_type":  "ORDER_FAILED",
+                                                "last_at":  "2026-05-05T09:37:16.379Z",
+                                                "last_source":  "temporal"
+                                            }
+                      },
+    "failure_events":  {
+                           "events":  [
+                                          {
+                                              "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                              "type":  "ORDER_CREATED",
+                                              "message":  "Order accepted by gateway",
+                                              "actor":  "user1",
+                                              "source":  "gateway-api",
+                                              "created_at":  "2026-05-05T09:37:12.863Z"
+                                          },
+                                          {
+                                              "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                              "type":  "ORDER_VALIDATED",
+                                              "message":  "Order payload validated",
+                                              "actor":  "user1",
+                                              "source":  "temporal",
+                                              "created_at":  "2026-05-05T09:37:13.006Z",
+                                              "metadata":  {
+                                                               "currency":  "USD"
+                                                           }
+                                          },
+                                          {
+                                              "order_id":  "e8cebe37-2720-46ba-a1ed-0dfa668f2b51",
+                                              "type":  "ORDER_FAILED",
+                                              "message":  "activity error (type: ReserveInventoryActivity, scheduledEventID: 17, startedEventID: 18, identity: 1@4b2ee3367100@): inventory rejected for sku BULK-999",
+                                              "actor":  "user1",
+                                              "source":  "temporal",
+                                              "created_at":  "2026-05-05T09:37:16.379Z",
+                                              "metadata":  {
+                                                               "error":  "activity error (type: ReserveInventoryActivity, scheduledEventID: 17, startedEventID: 18, identity: 1@4b2ee3367100@): inventory rejected for sku BULK-999"
+                                                           }
+                                          }
+                                      ]
+                       }
+}

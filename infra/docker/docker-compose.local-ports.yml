@@ -1,0 +1,4 @@
+services:
+  temporal:
+    ports: !override
+      - "7234:7233"
